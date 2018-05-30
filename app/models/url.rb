@@ -9,7 +9,7 @@ class Url < ApplicationRecord
               message: Proc.new do |object|
                 existing = find_by(original: object.original)
                 existing_url = "/urls/#{existing.short}"
-                "#{object.original} as already been shortened as
+                "#{object.original} has already been shortened as
                  <a href=#{existing_url} target='_blank'>#{existing.short}</a>"
               end
             }
@@ -31,10 +31,12 @@ class Url < ApplicationRecord
 
   def generate_short
     # encode the url
+    return unless sanitized
     self.short = Base64.strict_encode64(sanitized)
   end
 
   def sanitize
+    return unless original
     #sanitize the url for same results with www and http or https
     sanitized = original.strip.downcase.gsub(/(https?:\/\/)|(www\.)/, '')
     sanitized.slice!(-1) if sanitized[-1] == '/'

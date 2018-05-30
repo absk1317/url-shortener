@@ -14,6 +14,7 @@ class UrlController < ApplicationController
     else
       flash[:error] = "Shortened URL not found. Try generating it again."
       @url = Url.new # for the form on index page
+      @urls = Url.all
       render :index
     end
   end
@@ -27,6 +28,7 @@ class UrlController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = @url.errors.full_messages.join('<br/>')
+      @urls = Url.all
       render :index
     end
   end
