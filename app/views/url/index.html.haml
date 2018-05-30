@@ -5,4 +5,22 @@
 = form_for @url, url: url_index_path do |f|
   = f.label :original_url
   = f.text_field :original
-  = f.submit "Shorten", class: "btn btn-primary", disable_with: 'processing'
+  = f.submit "Shorten", class: "btn btn-primary"
+
+%br
+
+%h4 Existing :-
+
+%table{ border: 1 }
+  %tbody
+    %tr
+      %td Index:
+      %td Original URL:
+      %td Sanitized URL:
+      %td Shortened URL:
+    - @urls.each_with_index do |url, index|
+      %tr
+        %td= index + 1
+        %td= url.original
+        %td= url.sanitized
+        %td= url.short

@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root to: 'url#index'
   resources :url, only: :create
   get '/urls/:short', to: 'url#show'
+  namespace :api do
+    resources :url, only: [:create, :index, :destroy]
+  end
 end
