@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 20180529181446) do
   enable_extension "plpgsql"
 
   create_table "urls", force: :cascade do |t|
-    t.string "original_url"
-    t.string "short_url"
+    t.string "original"
+    t.string "short"
+    t.string "sanitized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["short_url"], name: "index_urls_on_short_url", unique: true
+    t.index ["sanitized"], name: "index_urls_on_sanitized"
+    t.index ["short"], name: "index_urls_on_short"
   end
 
 end

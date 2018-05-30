@@ -1,5 +1,8 @@
-%h1 See you in Komodo!
+%h1 URL Shortener
+- flash.each do |key, value|
+  = content_tag :div, value.html_safe, class: "flash #{key}"
+%br
 = form_for @url, url: url_index_path do |f|
   = f.label :original_url
-  = f.text_field :original_url
+  = f.text_field :original
   = f.submit "Shorten", class: "btn btn-primary", disable_with: 'processing'
