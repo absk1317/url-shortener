@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.5.1
+* Rails version 5.1.6
 
-Things you may want to cover:
+This URL shortener shortens a given URL and redirects to the original one when accessed by the shortened one.
 
-* Ruby version
+---
 
-* System dependencies
+This Shortener produces same results for same websites like:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+google.com
+www.google.com
+http://google.com
+https://google.com
+http://www.google.com
+https://www.google.com
