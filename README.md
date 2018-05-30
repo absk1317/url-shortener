@@ -9,9 +9,11 @@ This URL shortener shortens a given URL and redirects to the original one when a
 
 This Shortener produces same results for same websites like:
 
+```
 google.com
 www.google.com
 http://google.com
 https://google.com
 http://www.google.com
 https://www.google.com
+```
