@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/urls/:short', to: 'url#show'
   namespace :api do
     resources :url, only: [:create, :index, :destroy]
+    post '/bulk_upload', to: 'url#bulk_upload'
   end
 end

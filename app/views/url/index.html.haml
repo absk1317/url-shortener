@@ -23,4 +23,4 @@
         %td= index + 1
         %td= url.original
         %td= url.sanitized
-        %td= url.short
+        %td= link_to "http://urls/#{url.short}", url.target_url
